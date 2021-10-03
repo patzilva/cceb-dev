@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html style="margin-top: -80px;">
+<head lang="es">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CC & Elektric Band / Videos</title>
+    <link href="https://fonts.googleapis.com/css?family=Days+One" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="./script/script.js"></script>
+	
+</head>
+<body>
+	
+	<header>
+		<a href="index.html" id="logo">
+		<img class="logo-cceb" src="./img/logo-cceb.png" alt="logo elektric band">
+		
+		</a>
+		<nav>
+		  <ul>
+			<li><a href="index.html" >Inicio</a></li>
+			<li><a href="integrantes.html" >Integrantes</a></li>
+			<li><a href="videos.html" class="selected">Videos</a></li>
+			<li><a href="disenador.html">Diseñador</a></li>
+			<li><a href="contacto.html">Contáctame</a></li>
+		  </ul>
+		</nav>
+	  </header>
+
+
+	<div class="container-integrantes">
+		<h1>Videos Elektric Band</h1>
+        <div class="row">
+			<div class="col">
+				<div class="feature-img">
+					<img src="./img/gallery videos/cceb-trancedance.png" width="90%">
+					<img src="./img/gallery videos/play.png" class="play-btn-td" 
+					onclick="playVideo('videos/cceb-trancedance.mp4')">
+                </div>
+            </div>
+			<div class="col">
+				<div class="small-img-row">
+					<div class="small-img">
+                        <img src="./img/gallery videos/cceb-insideout.png">
+						<img src="./img/gallery videos/play.png" class="play-btn"
+						onclick="playVideo('videos/cceb-insideout.mp4')">
+					</div>
+                    
+				</div>
+				<div class="small-img-row">
+					<div class="small-img">
+                        <img src="./img/gallery videos/cceb-starlight.png">
+						<img src="./img/gallery videos/play.png" class="play-btn"
+						onclick="playVideo('videos/cceb-starlight.mp4')">
+					</div>
+                    
+				</div>
+
+				<div class="small-img-row">
+					<div class="small-img">
+                        <img src="./img/gallery videos/cceb-rumble.png">
+						<img src="./img/gallery videos/play.png" class="play-btn"
+						onclick="playVideo('videos/rumble_small.mp4')">
+					</div>
+                </div>
+			</div>
+         </div>
+	 </div>
+
+	 <div class="video-player" id="videoPlayer">
+		<video width="100%" controls  id="myVideo">
+		<source src="./videos/cceb-trancedance.mp4" type="video/mp4">
+		</video>
+
+		<img id="stopx" src="./img/gallery videos/close.png" class="close-btn" 
+		onclick="stopVideo()">
+       </div>
+
+	   <script>
+        var videoPlayer = document.getElementById("videoPlayer");
+		var myVideo = document.getElementById("myVideo");
+		var stopx = document.getElementById("stopx");
+
+        function stopVideo() {
+
+        videoPlayer.style.display = "none"; 
+		myVideo.pause();
+        }
+
+		function playVideo(file) {
+
+			myVideo.src = file;
+			videoPlayer.style.display = "block";
+			myVideo.play();
+		}
+
+</script>
+</body>
+</html>
